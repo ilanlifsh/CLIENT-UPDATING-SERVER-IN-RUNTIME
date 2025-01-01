@@ -1,3 +1,8 @@
+"""
+Protocol Module for handling communication and file transfers between client and server.
+Made by Ilan 1/1/2025
+"""
+
 import os
 
 # Constants for protocol handling
