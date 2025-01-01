@@ -1,3 +1,8 @@
+"""
+Server Script for handling client requests and executing commands such as listing files, updating functions, and sending files.
+Made by Ilan 1/1/2025
+"""
+
 import socket
 import os
 import protocol as prot
