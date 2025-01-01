@@ -1,3 +1,9 @@
+"""
+Client Script for communicating with a server using a custom protocol.
+Features include sending commands, receiving responses, and transferring files.
+Made by Ilan 1/1/2025
+"""
+
 import socket
 import protocol as prot
 import functions as func_tst
