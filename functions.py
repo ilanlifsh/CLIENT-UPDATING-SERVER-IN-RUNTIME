@@ -1,3 +1,9 @@
+"""
+Server-side functions for handling various client requests. Functions include deleting files, 
+listing directories, sending random numbers, capturing screenshots, sending files, and providing 
+server information such as its name and current time.
+Made by Ilan 1/1/2025
+"""
 import time
 import protocol as prot  # Custom protocol for sending and receiving data
 import subprocess as sub
