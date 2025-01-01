@@ -1,5 +1,5 @@
 """
-Server Script for handling client requests and executing commands such as listing files, updating functions, and sending files.
+Server Script for handling client requests and executing commands locate such as listing files, updating functions, and sending filesn or executing commands that are located in "functions.py".
 Made by Ilan 1/1/2025
 """
 
