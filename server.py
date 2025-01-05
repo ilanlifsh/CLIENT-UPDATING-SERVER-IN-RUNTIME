@@ -39,7 +39,7 @@ def update():
     Dynamically reloads the module to reflect the changes.
     """
     prot.send(socket=client_socket, data="ACK")  # Acknowledge the update request
-    file_name = prot.recv(socket=client_socket, type='file', name="functions.py")  # Receive the updated file
+    file_name = prot.recv(socket=client_socket, type='file', type_send="update")  # Receive the updated file
 
     # Overwrite the existing `functions.py` file
     shutil.copy(file_name, "functions.py")
