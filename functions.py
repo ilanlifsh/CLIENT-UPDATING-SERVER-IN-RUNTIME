@@ -36,18 +36,23 @@ def wdir(args):
     Args:
         args: List containing the client socket and (optionally) the directory path.
     """
-    client_socket = args[0]
-    if len(args) == 2:
+        client_socket = args[0]
+    if len(args)==2:
         directory = args[1]
         if os.path.exists(directory):
-            files = os.listdir(directory)
-            prot.send(socket=client_socket, data=files)
+            files = [f"[FILE]: {f}" for f in os.listdir(directory) if os.path.isfile(os.path.join(directory, f))]
+            subfolders = [f"[DIR]: {d}" for d in os.listdir(directory) if os.path.isdir(os.path.join(directory, d))]
+            result = "\n".join(subfolders + files)
+            prot.send(socket=client_socket, data=result)
         else:
-            prot.send(socket=client_socket, data="No such file or directory")
+            prot.send(socket=client_socket, data="no such file")
     else:
-        cwd = os.getcwd()  # Current working directory
-        files = os.listdir(cwd)
-        prot.send(socket=client_socket, data=files)
+        cwd = os.getcwd()
+        files = [f"[FILE]:{f}" for f in os.listdir(cwd) if os.path.isfile(os.path.join(cwd, f))]
+        subfolders = [f"[DIR]: {d}" for d in os.listdir(cwd) if os.path.isdir(os.path.join(cwd, d))]
+        result = "\n".join(subfolders+files)
+        prot.send(socket=client_socket, data=result)
+
 
 def wname(args):
     """
