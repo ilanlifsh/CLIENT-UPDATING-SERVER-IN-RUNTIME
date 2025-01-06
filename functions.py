@@ -36,7 +36,7 @@ def wdir(args):
     Args:
         args: List containing the client socket and (optionally) the directory path.
     """
-        client_socket = args[0]
+    client_socket = args[0]
     if len(args)==2:
         directory = args[1]
         if os.path.exists(directory):
