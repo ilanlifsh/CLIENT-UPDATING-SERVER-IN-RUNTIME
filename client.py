@@ -65,7 +65,8 @@ while True:
         while True:
             # Prompt the user for a command
             command = input("Enter command (LIST, UPDATE, EXIT): ")
-            
+            if not command:
+                continue
             if command.lower() == "exit":
                 # Exit the client
                 send_command(command)
